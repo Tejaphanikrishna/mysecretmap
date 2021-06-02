@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 	@GetMapping("/")
 	public String teja() {
-		return "Hi Teja";
+		String prefix = System.getenv().getOrDefault("USER_NAME", "Unknown");
+		return "Hi " + prefix;
 	}
 
 }
